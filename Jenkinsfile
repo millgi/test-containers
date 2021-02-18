@@ -1,13 +1,14 @@
 
 pipeline {
-  agent any
-  tools {
-    jdk 'JDK_11'
+  agent {
+    label 'Build'
   }
   stages {
     stage('Build') {
       steps {
-        sh "./gradlew check"
+        container('java') {
+          sh "./gradlew check"
+        }
       }
       post {
         always {
