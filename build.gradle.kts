@@ -48,8 +48,5 @@ tasks.withType<KotlinCompile> {
 }
 
 tasks.withType<Test> {
-    filter {
-        includeTestsMatching("FruitService*")
-    }
     useJUnitPlatform()
 }
