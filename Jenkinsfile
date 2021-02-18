@@ -7,7 +7,7 @@ pipeline {
     stage('Build') {
       steps {
         container('java') {
-          sh "./gradlew check"
+          sh "./gradlew check --no-daemon --stacktrace"
         }
       }
       post {
